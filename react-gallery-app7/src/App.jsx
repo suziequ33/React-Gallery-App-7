@@ -6,7 +6,7 @@ import PhotoList from './PhotoList';
 import apiKey from './config';
 
 const App = () => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
 
 
   const fetchData = async (query) => {
@@ -42,7 +42,7 @@ const App = () => {
           <Route path="/" element={<Navigate to="/cats" />} />
           <Route path="cats" element={<PhotoList topic="Cats" data={data} />} />
           <Route path="dogs" element={<PhotoList topic="Dogs" data={data} />} />
-          <Route path="computer" element={<PhotoList topic="Computers" data={data} />} />
+          <Route path="computers" element={<PhotoList topic="Computers" data={data} />} />
           <Route path="search/:query" element={<Search fetchData={fetchData} handleSearch={handleSearch} />} />
         </Routes>
       </div>

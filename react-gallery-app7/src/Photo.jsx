@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Photo = () => {
+const Photo = ({photo}) => {
     const imageUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
 
     return (
