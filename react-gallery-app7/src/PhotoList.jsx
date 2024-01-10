@@ -1,18 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Photo from './Photo';
 
 const PhotoList = ({ title, data }) => {
+    console.log('Data in PhotoList:', data);
     return (
         <div className="photo-container">
             <h2>{title} Results</h2>
-            <ul >
-                {data.map((photo) => (
-                    <li key={photo.id}>
-                     <Photo key={photo.id} photo={photo} />
-                    </li>
-                ))}
-            </ul>
+            {data.length > 0 ? (
+                <ul >
+                    {data.map((photo) => (
+                        <li key={photo.id}>
+                            <Photo key={photo.id} photo={photo} />
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <li className="not-found">
+                    <h3>No Results Found</h3>
+                    <p>You search did not return any results. Please try again.</p>
+                </li>
+            )}
         </div>
     );
 
