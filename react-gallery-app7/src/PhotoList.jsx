@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Photo from './Photo';
 
-const PhotoList = ({ topic, data }) => {
+const PhotoList = ({ title, data }) => {
     return (
         <div className="photo-container">
-            <h2>{topic}</h2>
+            <h2>{title} Results</h2>
             <ul >
                 {data.map((photo) => (
-                    <Photo key={photo.id} photo={photo} />
+                    <li key={photo.id}>
+                     <Photo key={photo.id} photo={photo} />
+                    </li>
                 ))}
             </ul>
         </div>
