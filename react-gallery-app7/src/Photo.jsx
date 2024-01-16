@@ -1,10 +1,8 @@
 import React from 'react';
 
 const Photo = ({ photo }) => {
-    if (!photo || !photo.server || !photo.id || !photo.secret) {
-        return null;
-    };
-    const imageUrl = `https://live.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+    const { server, id, secret } = photo;
+    const imageUrl = `https://live.staticflickr.com/${server}/${id}_${secret}.jpg`;
     return (
         <img src={imageUrl} alt={photo.title} />
     );

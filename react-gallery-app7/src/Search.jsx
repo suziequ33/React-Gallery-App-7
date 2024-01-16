@@ -5,9 +5,9 @@ const Search = ({ fetchData }) => {
     const [query, setQuery] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        fetchData(query);
+        await fetchData(query);
         navigate(`/search/${query}`);
     };
 

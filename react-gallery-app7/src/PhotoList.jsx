@@ -1,7 +1,10 @@
 import React from 'react';
 import Photo from './Photo';
+//import { Link } from 'react-router-dom';
 
 const PhotoList = ({ title, data }) => {
+    console.log('Data in PhotoList:', data);
+    console.log('Title in PhotoList:', title);
     console.log('Data in PhotoList:', data);
     return (
         <div className="photo-container">
