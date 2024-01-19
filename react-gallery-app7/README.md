@@ -12,7 +12,9 @@ Use React library to create an image gallery app.
 Learn best practice of working with React, like JSX to write markup-like syntaz directly in JS files and managing state in a container compnents that passes data down to reusable stateless components. 
 
 
-I first got hung up on Vite. We didnt really look into it so much and didnt relize that just need to delete and change the components. 
-I also had truble with fetch from Flickr, with the search page I went back to Unit 5/working with Fetch API.
-Didnt relize that I need to add the root file to index.html/ added that but also added index.css and index.jsx.
-I say and example of the URL in the img tag and found it worked to i took out the const in the Photo.jsx component. I thought that was very cool./mdn web docs.
+I initially encountered challenges with Vite. We didn't dive into it extensively and didn't realize that we just need to delete and change the components. 
+I also had difficulties with fetching from Flickr, particularly on the search page. I went back to Unit 5/working with Fetch API.
+Didn't realize that I need to add the root file to index.html. I added that, along with index.css and index.jsx.
+I saw an example of the URL in the img tag and found that it worked, so I removed the const in the Photo.jsx component. I found this feature very cool.(MDN Web Docs)
+I thought I was stuck with the topic buttons not fetching data, not realizing that the links do not trigger action to fetch data or changes in state.
+ (If only I had read the Note box.)
