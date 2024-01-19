@@ -1,14 +1,16 @@
-import React, { useEffect, useState} from 'react';
+import React, { useEffect } from 'react';
 import Photo from './Photo';
 
-
+//PhotoList component
 const PhotoList = ({ title, photos, fetchData }) => {
     useEffect(() => {
-        if(!photos || photos.length === 0) {
+        if (!photos || photos.length === 0) {
             fetchData(title.toLowerCase());
-    }
-}, [title, photos, fetchData]);
+        }
+    }, [title, photos, fetchData]);
+//useEffect to fetch data if photos are not available
 
+//Render JSX
     return (
         <div className="photo-container">
             <h2>{title}</h2>

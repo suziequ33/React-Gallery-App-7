@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+//Search component
 const Search = ({ fetchData }) => {
     const [query, setQuery] = useState('');
     const navigate = useNavigate();
 
-    const handleSubmit =  (e) => {
+    //Handle submit search
+    const handleSubmit = (e) => {
         e.preventDefault();
-       fetchData(query);
+        fetchData(query);
         setQuery('');
         navigate(`/search/${query}`);
     };
 
+    //Render JSX
     return (
         <div className="search-form">
             <form onSubmit={handleSubmit} className="search-form">
