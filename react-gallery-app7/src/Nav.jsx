@@ -2,8 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
-
-    return (
+ return (
         <nav className="main-nav">
             <ul>
                 <li><NavLink to='/mountains'>Mountains</NavLink></li>
@@ -12,6 +11,6 @@ const Nav = () => {
             </ul>
         </nav>
     );
-};
+ };
 
 export default Nav;
