@@ -12,7 +12,7 @@ Use React library to create an image gallery app.
 Learn best practice of working with React, like JSX to write markup-like syntaz directly in JS files and managing state in a container compnents that passes data down to reusable stateless components. 
 
 
-I initially encountered challenges with Vite. We didn't dive into it extensively and didn't realize that we just need to delete and change the components. 
+I initially encountered challenges with Vite. We didn't dive into it extensively and I didn't realize that we just need to delete and change the components. 
 I also had difficulties with fetching from Flickr, particularly on the search page. I went back to Unit 5/working with Fetch API.
 Didn't realize that I need to add the root file to index.html. I added that, along with index.css and index.jsx.
 I saw an example of the URL in the img tag and found that it worked, so I removed the const in the Photo.jsx component. I found this feature very cool.(MDN Web Docs)
