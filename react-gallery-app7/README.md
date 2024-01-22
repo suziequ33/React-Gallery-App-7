@@ -18,3 +18,4 @@ Didn't realize that I need to add the root file to index.html. I added that, alo
 I saw an example of the URL in the img tag and found that it worked, so I removed the const in the Photo.jsx component. I found this feature very cool.(MDN Web Docs)
 I thought I was stuck with the topic buttons not fetching data, not realizing that the links do not trigger action to fetch data or changes in state.
  (If only I had read the Note box.)
+ Peer review//Travis Alstrand reviewed- I was wondering why, when the page first loaded, it scrambles before landing. It helped me understand that I need to create 3 states, one for each static route query. It made the project more coherent and more readable. Thanks.

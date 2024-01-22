@@ -1,13 +1,16 @@
 import React, { useEffect } from 'react';
 import Photo from './Photo';
+import { useParams } from 'react-router-dom';
 
 //PhotoList component
 const PhotoList = ({ title, photos, fetchData }) => {
-    useEffect(() => {
+    const { query } = useParams();
+   
+    useEffect(() => {      
         if (!photos || photos.length === 0) {
-            fetchData(title.toLowerCase());
+           fetchData(query || title);
         }
-    }, [title, photos, fetchData]);
+    }, [title, query, photos, fetchData]);
 //useEffect to fetch data if photos are not available
 
 //Render JSX

@@ -9,6 +9,9 @@ import './index.css';
 const App = () => {
   //State for storing fetched photos and search query
   const [photos, setPhotos] = useState([]);
+  const [mountainsPhotos, setMountainsPhotos] = useState([]);
+  const [naturePhotos, setNaturePhotos] = useState([]);
+  const [catPhotos, setCatPhotos] = useState([]);
   const [query, setQuery] = useState('');
 
   //Function to fetch data from Flickr API
@@ -18,8 +21,18 @@ const App = () => {
 
       const response = await fetch(apiUrl);
       const data = await response.json();
+      console.log('Data from API', data);
 
-      setPhotos(data.photos.photo);
+      //Check if the query matches a static route
+      if (query === 'mountains') {
+        setMountainsPhotos(data.photos.photo);
+      } else if  (query === 'nature') {
+        setNaturePhotos(data.photos.photo);
+      } else if  (query === 'cats') {
+        setCatPhotos(data.photos.photo);
+      } else {
+        setPhotos(data.photos.photo);
+      }
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -44,10 +57,10 @@ const App = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Navigate to="/mountains" />} />
-        <Route path="/mountains" element={<PhotoList title="Mountains" photos={photos} fetchData={fetchData} />} />
-        <Route path="/nature" element={<PhotoList title="Nature" photos={photos} fetchData={fetchData} />} />
-        <Route path="/cats" element={<PhotoList title="Cats" photos={photos} fetchData={fetchData} />} />
-        <Route path="search/:query" element={<PhotoList title={`Search: ${query}`} photos={photos} fetchData={fetchData} />} />
+        <Route path="/mountains" element={<PhotoList title="Mountains" photos={mountainsPhotos} fetchData={fetchData}  />} />
+        <Route path="/nature" element={<PhotoList title="Nature" photos={naturePhotos} fetchData={fetchData} />} />
+        <Route path="/cats" element={<PhotoList title="Cats" photos={catPhotos} fetchData={fetchData}  />} />
+        <Route path="search/:query" element={<PhotoList title="Search" photos={photos} fetchData={fetchData} />} />
         <Route path="*" element={<Navigate to="/mountains" />} />
       </Routes>
     </div>
